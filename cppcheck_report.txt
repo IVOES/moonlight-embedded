@@ -1,0 +1,554 @@
+libgamestream/client.c:448:6: style: Suspicious condition (assignment + comparison); Clarify expression with parentheses. [clarifyCondition]
+  if ((ret = xml_status(data->memory, data->size) != GS_OK))
+     ^
+libgamestream/client.c:503:6: style: Suspicious condition (assignment + comparison); Clarify expression with parentheses. [clarifyCondition]
+  if ((ret = xml_status(data->memory, data->size) != GS_OK))
+     ^
+libgamestream/client.c:565:6: style: Suspicious condition (assignment + comparison); Clarify expression with parentheses. [clarifyCondition]
+  if ((ret = xml_status(data->memory, data->size) != GS_OK))
+     ^
+libgamestream/client.c:623:6: style: Suspicious condition (assignment + comparison); Clarify expression with parentheses. [clarifyCondition]
+  if ((ret = xml_status(data->memory, data->size) != GS_OK))
+     ^
+libgamestream/client.c:642:6: style: Suspicious condition (assignment + comparison); Clarify expression with parentheses. [clarifyCondition]
+  if ((ret = xml_status(data->memory, data->size) != GS_OK))
+     ^
+libgamestream/client.c:752:6: style: Suspicious condition (assignment + comparison); Clarify expression with parentheses. [clarifyCondition]
+  if ((ret = xml_status(data->memory, data->size) != GS_OK))
+     ^
+libgamestream/client.c:795:6: style: Suspicious condition (assignment + comparison); Clarify expression with parentheses. [clarifyCondition]
+  if ((ret = xml_status(data->memory, data->size) != GS_OK))
+     ^
+libgamestream/client.c:473:5: warning: %hhx in format string (no. 1) requires 'unsigned char *' but the argument type is 'signed char *'. [invalidScanfArgType_int]
+    sscanf(&result[count], "%2hhx", &plaincert[count / 2]);
+    ^
+libgamestream/client.c:531:5: warning: %hhx in format string (no. 1) requires 'unsigned char *' but the argument type is 'signed char *'. [invalidScanfArgType_int]
+    sscanf(&result[count], "%2hhx", &challenge_response_data_enc[count / 2]);
+    ^
+libgamestream/client.c:592:5: warning: %hhx in format string (no. 1) requires 'unsigned char *' but the argument type is 'signed char *'. [invalidScanfArgType_int]
+    sscanf(&result[count], "%2hhx", &pairing_secret[count / 2]);
+    ^
+libgamestream/client.c:674:48: style:inconclusive: Function 'gs_applist' argument 2 names different: declaration 'app_list' definition 'list'. [funcArgNamesDifferent]
+int gs_applist(PSERVER_DATA server, PAPP_LIST *list) {
+                                               ^
+libgamestream/client.h:48:48: note: Function 'gs_applist' argument 2 names different: declaration 'app_list' definition 'list'.
+int gs_applist(PSERVER_DATA server, PAPP_LIST *app_list);
+                                               ^
+libgamestream/client.c:674:48: note: Function 'gs_applist' argument 2 names different: declaration 'app_list' definition 'list'.
+int gs_applist(PSERVER_DATA server, PAPP_LIST *list) {
+                                               ^
+libgamestream/client.c:813:104: style:inconclusive: Function 'gs_init' argument 5 names different: declaration 'logLevel' definition 'log_level'. [funcArgNamesDifferent]
+int gs_init(PSERVER_DATA server, char *address, unsigned short httpPort, const char *keyDirectory, int log_level, bool unsupported) {
+                                                                                                       ^
+libgamestream/client.h:46:104: note: Function 'gs_init' argument 5 names different: declaration 'logLevel' definition 'log_level'.
+int gs_init(PSERVER_DATA server, char* address, unsigned short httpPort, const char *keyDirectory, int logLevel, bool unsupported);
+                                                                                                       ^
+libgamestream/client.c:813:104: note: Function 'gs_init' argument 5 names different: declaration 'logLevel' definition 'log_level'.
+int gs_init(PSERVER_DATA server, char *address, unsigned short httpPort, const char *keyDirectory, int log_level, bool unsupported) {
+                                                                                                       ^
+libgamestream/client.c:124:19: style: Local variable 'cert' shadows outer variable [shadowVariable]
+    CERT_KEY_PAIR cert = mkcert_generate();
+                  ^
+libgamestream/client.c:50:14: note: Shadowed declaration
+static X509 *cert;
+             ^
+libgamestream/client.c:124:19: note: Shadow variable
+    CERT_KEY_PAIR cert = mkcert_generate();
+                  ^
+libgamestream/sps.c:76:49: style: Variable 'h264_stream->sps->vui.max_bits_per_mb_denom' is reassigned a value before the old one has been used. [redundantAssignment]
+    h264_stream->sps->vui.max_bits_per_mb_denom = 1;
+                                                ^
+libgamestream/sps.c:64:51: note: h264_stream->sps->vui.max_bits_per_mb_denom is assigned
+      h264_stream->sps->vui.max_bits_per_mb_denom = 1;
+                                                  ^
+libgamestream/sps.c:76:49: note: h264_stream->sps->vui.max_bits_per_mb_denom is overwritten
+    h264_stream->sps->vui.max_bits_per_mb_denom = 1;
+                                                ^
+src/config.c:404:27: style: Condition 'config->config_file!=NULL' is always false [knownConditionTrueFalse]
+  if (config->config_file != NULL)
+                          ^
+src/config.c:369:25: note: Assignment 'config->config_file=NULL', assigned value is 0
+  config->config_file = NULL;
+                        ^
+src/config.c:404:27: note: Condition 'config->config_file!=NULL' is always false
+  if (config->config_file != NULL)
+                          ^
+src/input/cec.c:93:93: style: Same expression on both sides of '/'. [duplicateExpression]
+  int8_t iDevicesFound = g_iface.find_adapters(g_iface.connection, devices, sizeof(devices) / sizeof(devices), NULL);
+                                                                                            ^
+src/input/evdev.c:651:55: warning: Either the condition 'hat_index<4' is redundant or the array 'dev->hats_state[3][2]' is accessed at index dev->hats_state[3][*], which is out of bounds. [arrayIndexOutOfBoundsCond]
+        *currentHatDir = hat_constants[dev->hats_state[hat_index][1] + 1][dev->hats_state[hat_index][0] + 1];
+                                                      ^
+src/input/evdev.c:649:39: note: Assuming that condition 'hat_index<4' is not redundant
+      if (hat_index >= 0 && hat_index < 4) {
+                                      ^
+src/input/evdev.c:651:55: note: Array index out of bounds
+        *currentHatDir = hat_constants[dev->hats_state[hat_index][1] + 1][dev->hats_state[hat_index][0] + 1];
+                                                      ^
+src/input/evdev.c:682:38: style: Condition 'rc<0' is always true [knownConditionTrueFalse]
+      } else if (rc != -EAGAIN && rc < 0) {
+                                     ^
+src/input/evdev.c:672:89: note: Assuming that condition '(rc=libevdev_next_event(devices[i].dev,LIBEVDEV_READ_FLAG_NORMAL,&ev))>=0' is not redundant
+      while ((rc = libevdev_next_event(devices[i].dev, LIBEVDEV_READ_FLAG_NORMAL, &ev)) >= 0) {
+                                                                                        ^
+src/input/evdev.c:682:38: note: Condition 'rc<0' is always true
+      } else if (rc != -EAGAIN && rc < 0) {
+                                     ^
+src/input/evdev.c:793:5: error: Common realloc mistake: 'devices' nulled but not freed upon failure [memleakOnRealloc]
+    devices = realloc(devices, sizeof(struct input_device)*numDevices);
+    ^
+src/input/sdl.c:208:25: warning: Either the condition 'button<0x40000039+sizeof(keyCodes4)' is redundant or the array 'keyCodes4[26]' is accessed at index 51, which is out of bounds. [arrayIndexOutOfBoundsCond]
+      button = keyCodes4[button - 0x40000039];
+                        ^
+src/input/sdl.c:207:45: note: Assuming that condition 'button<0x40000039+sizeof(keyCodes4)' is not redundant
+    else if (button >= 0x40000039 && button < 0x40000039 + sizeof(keyCodes4))
+                                            ^
+src/input/sdl.c:208:25: note: Array index out of bounds
+      button = keyCodes4[button - 0x40000039];
+                        ^
+src/input/x11.c:156:30: style:inconclusive: Function 'x11_input_init' argument 1 names different: declaration 'display' definition 'x11_display'. [funcArgNamesDifferent]
+void x11_input_init(Display* x11_display, Window x11_window) {
+                             ^
+src/input/x11.h:22:30: note: Function 'x11_input_init' argument 1 names different: declaration 'display' definition 'x11_display'.
+void x11_input_init(Display* display, Window window);
+                             ^
+src/input/x11.c:156:30: note: Function 'x11_input_init' argument 1 names different: declaration 'display' definition 'x11_display'.
+void x11_input_init(Display* x11_display, Window x11_window) {
+                             ^
+src/input/x11.c:156:50: style:inconclusive: Function 'x11_input_init' argument 2 names different: declaration 'window' definition 'x11_window'. [funcArgNamesDifferent]
+void x11_input_init(Display* x11_display, Window x11_window) {
+                                                 ^
+src/input/x11.h:22:46: note: Function 'x11_input_init' argument 2 names different: declaration 'window' definition 'x11_window'.
+void x11_input_init(Display* display, Window window);
+                                             ^
+src/input/x11.c:156:50: note: Function 'x11_input_init' argument 2 names different: declaration 'window' definition 'x11_window'.
+void x11_input_init(Display* x11_display, Window x11_window) {
+                                                 ^
+src/loop.c:61:5: error: Common realloc mistake: 'fds' nulled but not freed upon failure [memleakOnRealloc]
+    fds = realloc(fds, sizeof(struct pollfd)*numFds);
+    ^
+src/loop.c:62:5: error: Common realloc mistake: 'fdHandlers' nulled but not freed upon failure [memleakOnRealloc]
+    fdHandlers = realloc(fdHandlers, sizeof(FdHandler*)*numFds);
+    ^
+src/loop.c:86:7: error: Uninitialized variable: fdindex [uninitvar]
+  if (fdindex != numFds && numFds > 0) {
+      ^
+src/main.c:384:7: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+      sprintf(pin, "%d%d%d%d", (unsigned)random() % 10, (unsigned)random() % 10, (unsigned)random() % 10, (unsigned)random() % 10);
+      ^
+src/main.c:384:7: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+      sprintf(pin, "%d%d%d%d", (unsigned)random() % 10, (unsigned)random() % 10, (unsigned)random() % 10, (unsigned)random() % 10);
+      ^
+src/main.c:384:7: warning: %d in format string (no. 3) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+      sprintf(pin, "%d%d%d%d", (unsigned)random() % 10, (unsigned)random() % 10, (unsigned)random() % 10, (unsigned)random() % 10);
+      ^
+src/main.c:384:7: warning: %d in format string (no. 4) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+      sprintf(pin, "%d%d%d%d", (unsigned)random() % 10, (unsigned)random() % 10, (unsigned)random() % 10, (unsigned)random() % 10);
+      ^
+src/main.c:173:0: information: Skipping configuration 'GIT_BRANCH' since the value of 'GIT_BRANCH' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  printf("Moonlight Embedded %d.%d.%d-%s-%s\n", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, GIT_BRANCH, GIT_COMMIT_HASH);
+^
+src/main.c:156:19: style: Condition 'system==SDL' is always true [knownConditionTrueFalse]
+  else if (system == SDL)
+                  ^
+src/main.c:148:7: note: Assuming that condition 'system!=SDL' is not redundant
+  if (IS_EMBEDDED(system)) {
+      ^
+src/main.c:156:19: note: Condition 'system==SDL' is always true
+  else if (system == SDL)
+                  ^
+src/main.c:366:23: style: Condition 'system==SDL' is always true [knownConditionTrueFalse]
+      else if (system == SDL) {
+                      ^
+src/main.c:334:11: note: Assuming that condition 'system!=SDL' is not redundant
+      if (IS_EMBEDDED(system)) {
+          ^
+src/main.c:366:23: note: Condition 'system==SDL' is always true
+      else if (system == SDL) {
+                      ^
+src/platform.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 14 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/platform.c:37:12: style: Variable 'std' is assigned a value that is never used. [unreadVariable]
+  bool std = strcmp(name, "auto") == 0;
+           ^
+src/platform.c:98:7: style: Condition 'std' is always false [knownConditionTrueFalse]
+  if (std || strcmp(name, "sdl") == 0)
+      ^
+src/platform.c:80:7: note: Assuming that condition 'std' is not redundant
+  if (std || x11 || vdpau || vaapi) {
+      ^
+src/platform.c:98:7: note: Condition 'std' is always false
+  if (std || strcmp(name, "sdl") == 0)
+      ^
+src/platform.c:81:14: style: Variable 'init' is assigned a value that is never used. [unreadVariable]
+    int init = x11_init(std || vdpau, std || vaapi);
+             ^
+src/video/aml.c:175:48: style: The scope of the variable 'api' can be reduced. [variableScope]
+  int written = 0, length = 0, errCounter = 0, api;
+                                               ^
+src/video/aml.c:178:19: portability: 'pkt_buf' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    memcpy(pkt_buf+length, entry->data, entry->length);
+                  ^
+src/video/aml.c:185:43: portability: 'pkt_buf' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    api = codec_write(&codecParam, pkt_buf+written, length);
+                                          ^
+src/video/aml.c:92:0: information: Skipping configuration 'FRAME_BASE_PATH_AMLVIDEO_AMVIDEO' since the value of 'FRAME_BASE_PATH_AMLVIDEO_AMVIDEO' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  codecParam.video_path         = FRAME_BASE_PATH_AMLVIDEO_AMVIDEO;
+^
+src/video/aml.c:88:0: information: Skipping configuration 'STREAM_TYPE_FRAME' since the value of 'STREAM_TYPE_FRAME' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  codecParam.dec_mode           = STREAM_TYPE_FRAME;
+^
+src/video/imx_vpu.c:59:64: style:inconclusive: Function 'vpu_setup' argument 3 names different: declaration 'stride' definition 'width'. [funcArgNamesDifferent]
+void vpu_setup(struct vpu_buf* buffers[], int bufferCount, int width, int height) {
+                                                               ^
+src/video/imx_vpu.h:33:64: note: Function 'vpu_setup' argument 3 names different: declaration 'stride' definition 'width'.
+void vpu_setup(struct vpu_buf* buffers[], int bufferCount, int stride, int height);
+                                                               ^
+src/video/imx_vpu.c:59:64: note: Function 'vpu_setup' argument 3 names different: declaration 'stride' definition 'width'.
+void vpu_setup(struct vpu_buf* buffers[], int bufferCount, int width, int height) {
+                                                               ^
+src/video/imx_vpu.c:176:15: style: Variable 'written' is assigned a value that is never used. [unreadVariable]
+  int written = 0;
+              ^
+src/video/mmal.c:162:21: style: Variable 'param.transform' is assigned a value that is never used. [unreadVariable]
+    param.transform = MMAL_DISPLAY_ROT90;
+                    ^
+src/video/mmal.c:165:21: style: Variable 'param.transform' is assigned a value that is never used. [unreadVariable]
+    param.transform = MMAL_DISPLAY_ROT180;
+                    ^
+src/video/mmal.c:168:21: style: Variable 'param.transform' is assigned a value that is never used. [unreadVariable]
+    param.transform = MMAL_DISPLAY_ROT270;
+                    ^
+src/video/mmal.c:171:21: style: Variable 'param.transform' is assigned a value that is never used. [unreadVariable]
+    param.transform = MMAL_DISPLAY_ROT0;
+                    ^
+src/video/mmal.c:269:19: style: Variable 'status' is assigned a value that is never used. [unreadVariable]
+      if ((status = mmal_port_send_buffer(decoder->input[0], buf)) != MMAL_SUCCESS) {
+                  ^
+src/video/mmal.c:281:17: style: Variable 'status' is assigned a value that is never used. [unreadVariable]
+    if ((status = mmal_port_send_buffer(decoder->output[0], buf)) != MMAL_SUCCESS)
+                ^
+src/video/rk.c:287:13: style: Variable 'ret' is reassigned a value before the old one has been used. [redundantAssignment]
+        ret = mpi_api->control(mpi_ctx, MPP_DEC_SET_INFO_CHANGE_READY, NULL);
+            ^
+src/video/rk.c:286:13: note: ret is assigned
+        ret = mpi_api->control(mpi_ctx, MPP_DEC_SET_EXT_BUF_GROUP, mpi_frm_grp);
+            ^
+src/video/rk.c:287:13: note: ret is overwritten
+        ret = mpi_api->control(mpi_ctx, MPP_DEC_SET_INFO_CHANGE_READY, NULL);
+            ^
+src/video/rk.c:145:7: style: The scope of the variable 'ret' can be reduced. [variableScope]
+  int ret;
+      ^
+src/video/rk.c:196:7: style: The scope of the variable 'ret' can be reduced. [variableScope]
+  int ret;
+      ^
+src/video/rk.c:530:7: style: The scope of the variable 'i' can be reduced. [variableScope]
+  int i;
+      ^
+src/video/rk.c:610:19: portability: 'pkt_buf' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    memcpy(pkt_buf+length, entry->data, entry->length);
+                  ^
+src/video/sdl.c:59:25: portability: 'ffmpeg_buffer' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    memcpy(ffmpeg_buffer+length, entry->data, entry->length);
+                        ^
+src/video/x11.c:173:25: portability: 'ffmpeg_buffer' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    memcpy(ffmpeg_buffer+length, entry->data, entry->length);
+                        ^
+third_party/h264bitstream/bs.h:288:9: style: The scope of the variable 'len' can be reduced. [variableScope]
+    int len;
+        ^
+third_party/h264bitstream/bs.h:363:43: style:inconclusive: Function 'bs_next_bits' argument 1 names different: declaration 'b' definition 'bs'. [funcArgNamesDifferent]
+static inline uint32_t bs_next_bits(bs_t* bs, int nbits)
+                                          ^
+third_party/h264bitstream/bs.h:78:36: note: Function 'bs_next_bits' argument 1 names different: declaration 'b' definition 'bs'.
+static uint32_t bs_next_bits(bs_t* b, int nbits);
+                                   ^
+third_party/h264bitstream/bs.h:363:43: note: Function 'bs_next_bits' argument 1 names different: declaration 'b' definition 'bs'.
+static inline uint32_t bs_next_bits(bs_t* bs, int nbits)
+                                          ^
+third_party/h264bitstream/bs.h:203:13: warning: Shifting 32-bit value by 32 bits is undefined behaviour. See condition at line 198. [shiftTooManyBits]
+    r += (1 << i) - 1;
+            ^
+third_party/h264bitstream/bs.h:198:39: note: Assuming that condition 'i<32' is not redundant
+    while( (bs_read_u1(b) == 0) && (i < 32) && (!bs_eof(b)) )
+                                      ^
+third_party/h264bitstream/bs.h:203:13: note: Shift
+    r += (1 << i) - 1;
+            ^
+third_party/h264bitstream/bs.h:203:13: warning: Either the condition 'i<32' is redundant or there is signed integer overflow for expression '1<<i'. [integerOverflowCond]
+    r += (1 << i) - 1;
+            ^
+third_party/h264bitstream/bs.h:198:39: note: Assuming that condition 'i<32' is not redundant
+    while( (bs_read_u1(b) == 0) && (i < 32) && (!bs_eof(b)) )
+                                      ^
+third_party/h264bitstream/bs.h:203:13: note: Integer overflow
+    r += (1 << i) - 1;
+            ^
+third_party/h264bitstream/bs.h:203:19: warning: Either the condition 'i<32' is redundant or there is signed integer overflow for expression '(1<<i)-1'. [integerOverflowCond]
+    r += (1 << i) - 1;
+                  ^
+third_party/h264bitstream/bs.h:198:39: note: Assuming that condition 'i<32' is not redundant
+    while( (bs_read_u1(b) == 0) && (i < 32) && (!bs_eof(b)) )
+                                      ^
+third_party/h264bitstream/bs.h:203:19: note: Integer overflow
+    r += (1 << i) - 1;
+                  ^
+third_party/h264bitstream/h264_stream.c:552:94: style:inconclusive: Boolean expression 'pps->second_chroma_qp_index_offset!=0' is used in bitwise operation. Did you mean '||'? [bitwiseOnBoolean]
+        have_more_data = pps->transform_8x8_mode_flag | pps->pic_scaling_matrix_present_flag | (pps->second_chroma_qp_index_offset != 0);
+                                                                                             ^
+third_party/h264bitstream/h264_stream.c:1439:94: style:inconclusive: Boolean expression 'pps->second_chroma_qp_index_offset!=0' is used in bitwise operation. Did you mean '||'? [bitwiseOnBoolean]
+        have_more_data = pps->transform_8x8_mode_flag | pps->pic_scaling_matrix_present_flag | (pps->second_chroma_qp_index_offset != 0);
+                                                                                             ^
+third_party/h264bitstream/h264_stream.c:358:25: style: Variable 'delta_scale' is reassigned a value before the old one has been used. [redundantAssignment]
+            delta_scale = bs_read_se(b);
+                        ^
+third_party/h264bitstream/h264_stream.c:355:29: note: delta_scale is assigned
+                delta_scale = (nextScale - lastScale) % 256 ;
+                            ^
+third_party/h264bitstream/h264_stream.c:358:25: note: delta_scale is overwritten
+            delta_scale = bs_read_se(b);
+                        ^
+third_party/ilclient/ilclient.c:1018:12: style: The scope of the variable 'status' can be reduced. [variableScope]
+   int32_t status;
+           ^
+third_party/ilclient/ilclient.c:1115:12: style: The scope of the variable 'status' can be reduced. [variableScope]
+   int32_t status;
+           ^
+third_party/ilclient/ilclient.c:193:35: style:inconclusive: Function 'ilclient_destroy' argument 1 names different: declaration 'handle' definition 'st'. [funcArgNamesDifferent]
+void ilclient_destroy(ILCLIENT_T *st)
+                                  ^
+third_party/ilclient/ilclient.h:291:52: note: Function 'ilclient_destroy' argument 1 names different: declaration 'handle' definition 'st'.
+VCHPRE_ void VCHPOST_ ilclient_destroy(ILCLIENT_T *handle);
+                                                   ^
+third_party/ilclient/ilclient.c:193:35: note: Function 'ilclient_destroy' argument 1 names different: declaration 'handle' definition 'st'.
+void ilclient_destroy(ILCLIENT_T *st)
+                                  ^
+third_party/ilclient/ilclient.c:209:54: style:inconclusive: Function 'ilclient_set_port_settings_callback' argument 1 names different: declaration 'handle' definition 'st'. [funcArgNamesDifferent]
+void ilclient_set_port_settings_callback(ILCLIENT_T *st, ILCLIENT_CALLBACK_T func, void *userdata)
+                                                     ^
+third_party/ilclient/ilclient.h:310:71: note: Function 'ilclient_set_port_settings_callback' argument 1 names different: declaration 'handle' definition 'st'.
+VCHPRE_ void VCHPOST_ ilclient_set_port_settings_callback(ILCLIENT_T *handle,
+                                                                      ^
+third_party/ilclient/ilclient.c:209:54: note: Function 'ilclient_set_port_settings_callback' argument 1 names different: declaration 'handle' definition 'st'.
+void ilclient_set_port_settings_callback(ILCLIENT_T *st, ILCLIENT_CALLBACK_T func, void *userdata)
+                                                     ^
+third_party/ilclient/ilclient.c:224:44: style:inconclusive: Function 'ilclient_set_eos_callback' argument 1 names different: declaration 'handle' definition 'st'. [funcArgNamesDifferent]
+void ilclient_set_eos_callback(ILCLIENT_T *st, ILCLIENT_CALLBACK_T func, void *userdata)
+                                           ^
+third_party/ilclient/ilclient.h:332:61: note: Function 'ilclient_set_eos_callback' argument 1 names different: declaration 'handle' definition 'st'.
+VCHPRE_ void VCHPOST_ ilclient_set_eos_callback(ILCLIENT_T *handle,
+                                                            ^
+third_party/ilclient/ilclient.c:224:44: note: Function 'ilclient_set_eos_callback' argument 1 names different: declaration 'handle' definition 'st'.
+void ilclient_set_eos_callback(ILCLIENT_T *st, ILCLIENT_CALLBACK_T func, void *userdata)
+                                           ^
+third_party/ilclient/ilclient.c:239:46: style:inconclusive: Function 'ilclient_set_error_callback' argument 1 names different: declaration 'handle' definition 'st'. [funcArgNamesDifferent]
+void ilclient_set_error_callback(ILCLIENT_T *st, ILCLIENT_CALLBACK_T func, void *userdata)
+                                             ^
+third_party/ilclient/ilclient.h:353:63: note: Function 'ilclient_set_error_callback' argument 1 names different: declaration 'handle' definition 'st'.
+VCHPRE_ void VCHPOST_ ilclient_set_error_callback(ILCLIENT_T *handle,
+                                                              ^
+third_party/ilclient/ilclient.c:239:46: note: Function 'ilclient_set_error_callback' argument 1 names different: declaration 'handle' definition 'st'.
+void ilclient_set_error_callback(ILCLIENT_T *st, ILCLIENT_CALLBACK_T func, void *userdata)
+                                             ^
+third_party/ilclient/ilclient.c:253:57: style:inconclusive: Function 'ilclient_set_fill_buffer_done_callback' argument 1 names different: declaration 'handle' definition 'st'. [funcArgNamesDifferent]
+void ilclient_set_fill_buffer_done_callback(ILCLIENT_T *st, ILCLIENT_BUFFER_CALLBACK_T func, void *userdata)
+                                                        ^
+third_party/ilclient/ilclient.h:401:74: note: Function 'ilclient_set_fill_buffer_done_callback' argument 1 names different: declaration 'handle' definition 'st'.
+VCHPRE_ void VCHPOST_ ilclient_set_fill_buffer_done_callback(ILCLIENT_T *handle,
+                                                                         ^
+third_party/ilclient/ilclient.c:253:57: note: Function 'ilclient_set_fill_buffer_done_callback' argument 1 names different: declaration 'handle' definition 'st'.
+void ilclient_set_fill_buffer_done_callback(ILCLIENT_T *st, ILCLIENT_BUFFER_CALLBACK_T func, void *userdata)
+                                                        ^
+third_party/ilclient/ilclient.c:267:58: style:inconclusive: Function 'ilclient_set_empty_buffer_done_callback' argument 1 names different: declaration 'handle' definition 'st'. [funcArgNamesDifferent]
+void ilclient_set_empty_buffer_done_callback(ILCLIENT_T *st, ILCLIENT_BUFFER_CALLBACK_T func, void *userdata)
+                                                         ^
+third_party/ilclient/ilclient.h:424:75: note: Function 'ilclient_set_empty_buffer_done_callback' argument 1 names different: declaration 'handle' definition 'st'.
+VCHPRE_ void VCHPOST_ ilclient_set_empty_buffer_done_callback(ILCLIENT_T *handle,
+                                                                          ^
+third_party/ilclient/ilclient.c:267:58: note: Function 'ilclient_set_empty_buffer_done_callback' argument 1 names different: declaration 'handle' definition 'st'.
+void ilclient_set_empty_buffer_done_callback(ILCLIENT_T *st, ILCLIENT_BUFFER_CALLBACK_T func, void *userdata)
+                                                         ^
+third_party/ilclient/ilclient.c:281:54: style:inconclusive: Function 'ilclient_set_configchanged_callback' argument 1 names different: declaration 'handle' definition 'st'. [funcArgNamesDifferent]
+void ilclient_set_configchanged_callback(ILCLIENT_T *st, ILCLIENT_CALLBACK_T func, void *userdata)
+                                                     ^
+third_party/ilclient/ilclient.h:377:71: note: Function 'ilclient_set_configchanged_callback' argument 1 names different: declaration 'handle' definition 'st'.
+VCHPRE_ void VCHPOST_ ilclient_set_configchanged_callback(ILCLIENT_T *handle,
+                                                                      ^
+third_party/ilclient/ilclient.c:281:54: note: Function 'ilclient_set_configchanged_callback' argument 1 names different: declaration 'handle' definition 'st'.
+void ilclient_set_configchanged_callback(ILCLIENT_T *st, ILCLIENT_CALLBACK_T func, void *userdata)
+                                                     ^
+third_party/ilclient/ilclient.c:295:43: style:inconclusive: Function 'ilclient_create_component' argument 1 names different: declaration 'handle' definition 'client'. [funcArgNamesDifferent]
+int ilclient_create_component(ILCLIENT_T *client, COMPONENT_T **comp, char *name,
+                                          ^
+third_party/ilclient/ilclient.h:450:60: note: Function 'ilclient_create_component' argument 1 names different: declaration 'handle' definition 'client'.
+VCHPRE_ int VCHPOST_ ilclient_create_component(ILCLIENT_T *handle,
+                                                           ^
+third_party/ilclient/ilclient.c:295:43: note: Function 'ilclient_create_component' argument 1 names different: declaration 'handle' definition 'client'.
+int ilclient_create_component(ILCLIENT_T *client, COMPONENT_T **comp, char *name,
+                                          ^
+third_party/ilclient/ilclient.c:406:40: style:inconclusive: Function 'ilclient_remove_event' argument 1 names different: declaration 'comp' definition 'st'. [funcArgNamesDifferent]
+int ilclient_remove_event(COMPONENT_T *st, OMX_EVENTTYPE eEvent,
+                                       ^
+third_party/ilclient/ilclient.h:789:57: note: Function 'ilclient_remove_event' argument 1 names different: declaration 'comp' definition 'st'.
+VCHPRE_ int VCHPOST_ ilclient_remove_event(COMPONENT_T *comp,
+                                                        ^
+third_party/ilclient/ilclient.c:406:40: note: Function 'ilclient_remove_event' argument 1 names different: declaration 'comp' definition 'st'.
+int ilclient_remove_event(COMPONENT_T *st, OMX_EVENTTYPE eEvent,
+                                       ^
+third_party/ilclient/ilclient.c:406:58: style:inconclusive: Function 'ilclient_remove_event' argument 2 names different: declaration 'event' definition 'eEvent'. [funcArgNamesDifferent]
+int ilclient_remove_event(COMPONENT_T *st, OMX_EVENTTYPE eEvent,
+                                                         ^
+third_party/ilclient/ilclient.h:790:58: note: Function 'ilclient_remove_event' argument 2 names different: declaration 'event' definition 'eEvent'.
+                                           OMX_EVENTTYPE event,
+                                                         ^
+third_party/ilclient/ilclient.c:406:58: note: Function 'ilclient_remove_event' argument 2 names different: declaration 'event' definition 'eEvent'.
+int ilclient_remove_event(COMPONENT_T *st, OMX_EVENTTYPE eEvent,
+                                                         ^
+third_party/ilclient/ilclient.c:515:42: style:inconclusive: Function 'ilclient_teardown_tunnels' argument 1 names different: declaration 'tunnels' definition 'tunnel'. [funcArgNamesDifferent]
+void ilclient_teardown_tunnels(TUNNEL_T *tunnel)
+                                         ^
+third_party/ilclient/ilclient.h:724:59: note: Function 'ilclient_teardown_tunnels' argument 1 names different: declaration 'tunnels' definition 'tunnel'.
+VCHPRE_ void VCHPOST_ ilclient_teardown_tunnels(TUNNEL_T *tunnels);
+                                                          ^
+third_party/ilclient/ilclient.c:515:42: note: Function 'ilclient_teardown_tunnels' argument 1 names different: declaration 'tunnels' definition 'tunnel'.
+void ilclient_teardown_tunnels(TUNNEL_T *tunnel)
+                                         ^
+third_party/ilclient/ilclient.c:801:40: style:inconclusive: Function 'ilclient_enable_port_buffers' argument 5 names different: declaration 'userdata' definition 'private'. [funcArgNamesDifferent]
+                                 void *private)
+                                       ^
+third_party/ilclient/ilclient.h:571:57: note: Function 'ilclient_enable_port_buffers' argument 5 names different: declaration 'userdata' definition 'private'.
+                                                  void *userdata);
+                                                        ^
+third_party/ilclient/ilclient.c:801:40: note: Function 'ilclient_enable_port_buffers' argument 5 names different: declaration 'userdata' definition 'private'.
+                                 void *private)
+                                       ^
+third_party/ilclient/ilclient.c:897:42: style:inconclusive: Function 'ilclient_disable_port_buffers' argument 5 names different: declaration 'userdata' definition 'private'. [funcArgNamesDifferent]
+                                   void *private)
+                                         ^
+third_party/ilclient/ilclient.h:601:59: note: Function 'ilclient_disable_port_buffers' argument 5 names different: declaration 'userdata' definition 'private'.
+                                                    void *userdata);
+                                                          ^
+third_party/ilclient/ilclient.c:897:42: note: Function 'ilclient_disable_port_buffers' argument 5 names different: declaration 'userdata' definition 'private'.
+                                   void *private)
+                                         ^
+third_party/ilclient/ilclient.c:1113:49: style:inconclusive: Function 'ilclient_wait_for_event' argument 8 names different: declaration 'timeout' definition 'suspend'. [funcArgNamesDifferent]
+                            int event_flag, int suspend)
+                                                ^
+third_party/ilclient/ilclient.h:860:50: note: Function 'ilclient_wait_for_event' argument 8 names different: declaration 'timeout' definition 'suspend'.
+                                             int timeout);
+                                                 ^
+third_party/ilclient/ilclient.c:1113:49: note: Function 'ilclient_wait_for_event' argument 8 names different: declaration 'timeout' definition 'suspend'.
+                            int event_flag, int suspend)
+                                                ^
+third_party/ilclient/ilclient.c:1179:118: style:inconclusive: Function 'ilclient_wait_for_command_complete_dual' argument 4 names different: declaration 'related' definition 'other'. [funcArgNamesDifferent]
+int ilclient_wait_for_command_complete_dual(COMPONENT_T *comp, OMX_COMMANDTYPE command, OMX_U32 nData2, COMPONENT_T *other)
+                                                                                                                     ^
+third_party/ilclient/ilclient.h:920:75: note: Function 'ilclient_wait_for_command_complete_dual' argument 4 names different: declaration 'related' definition 'other'.
+                                                             COMPONENT_T *related);
+                                                                          ^
+third_party/ilclient/ilclient.c:1179:118: note: Function 'ilclient_wait_for_command_complete_dual' argument 4 names different: declaration 'related' definition 'other'.
+int ilclient_wait_for_command_complete_dual(COMPONENT_T *comp, OMX_COMMANDTYPE command, OMX_U32 nData2, COMPONENT_T *other)
+                                                                                                                     ^
+third_party/ilclient/ilclient.c:332:12: style: Local variable 'name' shadows outer argument [shadowArgument]
+      char name[128];
+           ^
+third_party/ilclient/ilclient.c:295:77: note: Shadowed declaration
+int ilclient_create_component(ILCLIENT_T *client, COMPONENT_T **comp, char *name,
+                                                                            ^
+third_party/ilclient/ilclient.c:332:12: note: Shadow variable
+      char name[128];
+           ^
+third_party/ilclient/ilclient.c:356:27: style: Local variable 'error' shadows outer variable [shadowVariable]
+            OMX_ERRORTYPE error = OMX_GetParameter((*comp)->comp, types[i], &ports);
+                          ^
+third_party/ilclient/ilclient.c:299:18: note: Shadowed declaration
+   OMX_ERRORTYPE error;
+                 ^
+third_party/ilclient/ilclient.c:356:27: note: Shadow variable
+            OMX_ERRORTYPE error = OMX_GetParameter((*comp)->comp, types[i], &ports);
+                          ^
+third_party/ilclient/ilcore.c:219:21: style: Condition 'ilcs_service==NULL' is always false [knownConditionTrueFalse]
+   if (ilcs_service == NULL)
+                    ^
+third_party/ilclient/ilcore.c:214:43: note: Assuming that condition 'ilcs_service==NULL' is not redundant
+   if (hComponent == NULL || ilcs_service == NULL)
+                                          ^
+third_party/ilclient/ilcore.c:219:21: note: Condition 'ilcs_service==NULL' is always false
+   if (ilcs_service == NULL)
+                    ^
+third_party/ilclient/ilcore.c:128:0: style: The function 'OMX_ComponentNameEnum' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilcore.c:271:0: style: The function 'OMX_GetComponentsOfRole' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilcore.c:295:0: style: The function 'OMX_GetDebugInformation' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilcore.c:283:0: style: The function 'OMX_GetRolesOfComponent' is never used. [unusedFunction]
+
+^
+third_party/h264bitstream/h264_stream.c:112:0: style: The function 'debug_bytes' is never used. [unusedFunction]
+
+^
+src/input/udev.c:98:0: style: The function 'evdev_destroy' is never used. [unusedFunction]
+
+^
+third_party/h264bitstream/h264_nal.c:92:0: style: The function 'find_nal_unit' is never used. [unusedFunction]
+
+^
+third_party/h264bitstream/h264_nal.c:62:0: style: The function 'h264_free' is never used. [unusedFunction]
+
+^
+libgamestream/http.c:103:0: style: The function 'http_cleanup' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilclient.c:1283:0: style: The function 'ilclient_get_output_buffer' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilclient.c:1776:0: style: The function 'ilclient_get_port_index' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilclient.c:281:0: style: The function 'ilclient_set_configchanged_callback' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilclient.c:267:0: style: The function 'ilclient_set_empty_buffer_done_callback' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilclient.c:224:0: style: The function 'ilclient_set_eos_callback' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilclient.c:239:0: style: The function 'ilclient_set_error_callback' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilclient.c:253:0: style: The function 'ilclient_set_fill_buffer_done_callback' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilclient.c:209:0: style: The function 'ilclient_set_port_settings_callback' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilclient.c:1832:0: style: The function 'ilclient_stack_size' is never used. [unusedFunction]
+
+^
+third_party/ilclient/ilclient.c:1817:0: style: The function 'ilclient_suggest_bufsize' is never used. [unusedFunction]
+
+^
+src/loop.c:75:0: style: The function 'loop_remove_fd' is never used. [unusedFunction]
+
+^
+third_party/h264bitstream/h264_nal.c:255:0: style: The function 'peek_nal_unit' is never used. [unusedFunction]
+
+^
+third_party/h264bitstream/h264_stream.c:659:0: style: The function 'read_filler_data_rbsp' is never used. [unusedFunction]
+
+^
+third_party/h264bitstream/h264_sei.c:45:0: style: The function 'read_sei_end_bits' is never used. [unusedFunction]
+
+^
+third_party/h264bitstream/h264_stream.c:1546:0: style: The function 'write_filler_data_rbsp' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
